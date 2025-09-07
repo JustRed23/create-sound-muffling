@@ -1,9 +1,6 @@
 {
-  "itemGroup.createsoundmuffling": "Create - Sound Muffling",
+  "itemGroup.createsoundmuffling.base": "Create - Sound Muffling",
   "block.createsoundmuffling.andesite_sound_muffler": "Andesite Sound Muffler",
   "block.createsoundmuffling.brass_sound_muffler": "Brass Sound Muffler",
-  "block.createsoundmuffling.copper_sound_muffler": "Copper Sound Muffler",
-  "item.createsoundmuffling.andesite_sound_muffler": "Andesite Sound Muffler",
-  "item.createsoundmuffling.brass_sound_muffler": "Brass Sound Muffler",
-  "item.createsoundmuffling.copper_sound_muffler": "Copper Sound Muffler"
+  "block.createsoundmuffling.copper_sound_muffler": "Copper Sound Muffler"
 }

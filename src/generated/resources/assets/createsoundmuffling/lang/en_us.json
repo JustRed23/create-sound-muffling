@@ -1,5 +1,6 @@
 {
   "block.createsoundmuffling.andesite_sound_muffler": "Andesite Sound Muffler",
   "block.createsoundmuffling.brass_sound_muffler": "Brass Sound Muffler",
-  "block.createsoundmuffling.copper_sound_muffler": "Copper Sound Muffler"
+  "block.createsoundmuffling.copper_sound_muffler": "Copper Sound Muffler",
+  "itemGroup.createsoundmuffling.base": "Create - Sound Muffling"
 }

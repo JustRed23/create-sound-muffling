@@ -19,8 +19,13 @@ public final class CSMCreativeTabs {
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BASE_CREATIVE_TAB = CREATIVE_MODE_TABS.register("base",
             () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup.createsoundmuffling"))
-                    .withTabsAfter(AllCreativeModeTabs.BASE_CREATIVE_TAB.getKey())
+                    .title(Component.translatable("itemGroup.createsoundmuffling.base"))
+                    .withTabsBefore(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getId())
                     .icon(CSMBlocks.ANDESITE_SOUND_MUFFLER::asStack)
+                    .displayItems((params, output) -> {
+                        output.accept(CSMBlocks.ANDESITE_SOUND_MUFFLER);
+                        output.accept(CSMBlocks.BRASS_SOUND_MUFFLER);
+                        output.accept(CSMBlocks.COPPER_SOUND_MUFFLER);
+                    })
                     .build());
 }
