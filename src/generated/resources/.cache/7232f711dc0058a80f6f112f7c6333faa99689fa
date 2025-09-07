@@ -1,0 +1,14 @@
+// 1.21.1	2025-09-08T00:20:33.803423	Registrate Provider for createsoundmuffling [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+48b588cf929366eac37edb5fa1aab200b4514da4 assets/createsoundmuffling/blockstates/andesite_sound_muffler.json
+2fb56431e2ad1596e3b9fc88b25c32240765bff1 assets/createsoundmuffling/blockstates/brass_sound_muffler.json
+2b6db011280a786ee9c8430cd623d7255a05c1fe assets/createsoundmuffling/blockstates/copper_sound_muffler.json
+f06473dc976582ec13737baed8ee636dce15f13c assets/createsoundmuffling/lang/en_ud.json
+3a5dbbfe580fc239d70d017869c7012b5d483bed assets/createsoundmuffling/lang/en_us.json
+4d223c15c5544110a747ea69a3f981860f8a5dd2 assets/createsoundmuffling/models/item/andesite_sound_muffler.json
+3fb193d81802a5e0260899081a390d246d21a70e assets/createsoundmuffling/models/item/brass_sound_muffler.json
+d49582fe04fdd0eab3555a6261d57e001d3cf9fc assets/createsoundmuffling/models/item/copper_sound_muffler.json
+a074d6b2b88269311eb3adbf2dac1dd086bc31ff data/createsoundmuffling/loot_table/blocks/andesite_sound_muffler.json
+ca3dd0b1830bac4e22e5794cc72ae9a7c8a3633d data/createsoundmuffling/loot_table/blocks/brass_sound_muffler.json
+7ca32066977d57887f47490a1f6c36e3e894a70d data/createsoundmuffling/loot_table/blocks/copper_sound_muffler.json
+03f648e3117e9f18c07af0df38311df8e282b4b8 data/minecraft/tags/block/mineable/axe.json
+03f648e3117e9f18c07af0df38311df8e282b4b8 data/minecraft/tags/block/mineable/pickaxe.json

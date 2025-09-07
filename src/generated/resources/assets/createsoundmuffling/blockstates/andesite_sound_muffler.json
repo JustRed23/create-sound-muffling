@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "createsoundmuffling:block/sound_muffler/block_andesite",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "createsoundmuffling:block/sound_muffler/block_andesite",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "createsoundmuffling:block/sound_muffler/block_andesite",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "createsoundmuffling:block/sound_muffler/block_andesite",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "createsoundmuffling:block/sound_muffler/block_andesite"
+    },
+    "facing=west": {
+      "model": "createsoundmuffling:block/sound_muffler/block_andesite",
+      "x": 90,
+      "y": 270
+    }
+  }
+}
