@@ -1,0 +1,7 @@
+{
+	"parent": "createsoundmuffling:block/sound_muffler/block",
+	"textures": {
+		"casing": "create:block/copper_casing",
+		"opening": "create:block/gearbox"
+	}
+}
