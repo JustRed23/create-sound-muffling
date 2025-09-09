@@ -22,7 +22,7 @@ public class CreateSoundMufflingClient {
     static void muffleSoundsInRange(PlaySoundEvent event) {
         if (!(event.getSound() instanceof SimpleSoundInstance instance) || Minecraft.getInstance().level == null) return;
         BlockPos soundPos = BlockPos.containing(instance.getX(), instance.getY(), instance.getZ());
-        AABB box = new AABB(soundPos).inflate(SoundMufflerBlock.MAX_RANGE);
+        AABB box = new AABB(soundPos.getX(), soundPos.getY(), soundPos.getZ(), soundPos.getX(), soundPos.getY(), soundPos.getZ()).inflate(SoundMufflerBlock.MAX_RANGE);
 
         AtomicReference<SoundMufflerBlock.CasingType> bestCasing = new AtomicReference<>();
 
