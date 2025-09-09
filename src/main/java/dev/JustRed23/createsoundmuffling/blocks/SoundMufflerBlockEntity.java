@@ -7,6 +7,7 @@ import net.createmod.catnip.lang.LangNumberFormat;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -35,5 +36,17 @@ public class SoundMufflerBlockEntity extends KineticBlockEntity {
                 .forGoggles(tooltip, 1);
 
         return true;
+    }
+
+    private SoundMufflerBlock block() {
+        return (SoundMufflerBlock) getBlockState().getBlock();
+    }
+
+    public SoundMufflerBlock.CasingType getCasing() {
+        return block().getCasing();
+    }
+
+    public boolean filtersSound(ResourceLocation sound) {
+        return block().filtersSound(sound);
     }
 }

@@ -29,6 +29,7 @@ public class CreateSoundMufflingClient {
         BlockPos.betweenClosedStream(box).forEach(pos -> {
             Minecraft.getInstance().level.getBlockEntity(pos, CSMBlockEntities.SOUND_MUFFLER.get()).ifPresent(be -> {
                 if (!be.isSpeedRequirementFulfilled()) return;
+                if (!be.filtersSound(instance.getLocation())) return;
                 if (be.getCasing().isHigherTierThan(bestCasing.get()))
                     bestCasing.set(be.getCasing());
             });

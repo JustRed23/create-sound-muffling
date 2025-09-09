@@ -11,14 +11,18 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class SoundMufflerBlock extends DirectionalKineticBlock implements IBE<SoundMufflerBlockEntity> {
 
+    public static final int MAX_RANGE = 6;
+
     public enum CasingType {
-        ANDESITE(AllBlocks.ANDESITE_CASING.getId(), 1, 0.25),
-        BRASS(AllBlocks.BRASS_CASING.getId(), 2, 0.5),
-        COPPER(AllBlocks.COPPER_CASING.getId(), 4, 0.75);
+        ANDESITE(AllBlocks.ANDESITE_CASING.getId(), 1, 0.4),
+        BRASS(AllBlocks.BRASS_CASING.getId(), 2, 0.65),
+        COPPER(AllBlocks.COPPER_CASING.getId(), 4, 0.90);
 
         public static Optional<CasingType> fromId(ResourceLocation id) {
             for (CasingType type : values()) {
@@ -38,7 +42,7 @@ public class SoundMufflerBlock extends DirectionalKineticBlock implements IBE<So
         }
 
         public boolean isHigherTierThan(CasingType other) {
-            return this.impact > other.impact;
+            return other == null || this.impact > other.impact;
         }
 
         public ResourceLocation id() {
@@ -54,11 +58,16 @@ public class SoundMufflerBlock extends DirectionalKineticBlock implements IBE<So
         }
     }
 
-    private CasingType casingType;
+    private final CasingType casingType;
+    private final List<ResourceLocation> soundFilter = new ArrayList<>();
 
     public SoundMufflerBlock(Properties props, CasingType type) {
         super(props);
         this.casingType = type;
+    }
+
+    public boolean filtersSound(ResourceLocation sound) {
+        return soundFilter.isEmpty() || soundFilter.contains(sound);
     }
 
     public final Direction.Axis getRotationAxis(BlockState state) {
@@ -75,6 +84,10 @@ public class SoundMufflerBlock extends DirectionalKineticBlock implements IBE<So
 
     public final BlockEntityType<? extends SoundMufflerBlockEntity> getBlockEntityType() {
         return CSMBlockEntities.SOUND_MUFFLER.get();
+    }
+
+    public SpeedLevel getMinimumRequiredSpeedLevel() {
+        return SpeedLevel.SLOW;
     }
 
     public final CasingType getCasing() {
