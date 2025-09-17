@@ -1,8 +1,11 @@
 package dev.JustRed23.createsoundmuffling.blocks;
 
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
+import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
+import com.simibubi.create.foundation.blockEntity.behaviour.filtering.FilteringBehaviour;
 import com.simibubi.create.foundation.utility.CreateLang;
 import dev.JustRed23.createsoundmuffling.CreateSoundMuffling;
+import dev.JustRed23.createsoundmuffling.registry.CSMItems;
 import net.createmod.catnip.lang.LangNumberFormat;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -17,8 +20,17 @@ import static net.minecraft.ChatFormatting.GRAY;
 
 public class SoundMufflerBlockEntity extends KineticBlockEntity {
 
+    private FilteringBehaviour filtering;
+
     public SoundMufflerBlockEntity(BlockEntityType<?> typeIn, BlockPos pos, BlockState state) {
         super(typeIn, pos, state);
+    }
+
+    public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
+        filtering = new FilteringBehaviour(this, new SoundMufflerFilterSlotPositioning())
+                .withPredicate(CSMItems.SOUND_FILTER::isIn)
+                .withCallback(stack -> block().filterChanged(stack));
+        behaviours.add(filtering);
     }
 
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {

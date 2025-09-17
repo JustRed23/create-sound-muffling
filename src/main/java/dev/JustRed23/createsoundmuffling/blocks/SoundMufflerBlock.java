@@ -3,10 +3,12 @@ package dev.JustRed23.createsoundmuffling.blocks;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.kinetics.base.DirectionalKineticBlock;
 import com.simibubi.create.foundation.block.IBE;
+import dev.JustRed23.createsoundmuffling.items.SoundFilterItem;
 import dev.JustRed23.createsoundmuffling.registry.CSMBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -68,6 +70,11 @@ public class SoundMufflerBlock extends DirectionalKineticBlock implements IBE<So
 
     public boolean filtersSound(ResourceLocation sound) {
         return soundFilter.isEmpty() || soundFilter.contains(sound);
+    }
+
+    void filterChanged(ItemStack stack) {
+        soundFilter.clear();
+        SoundFilterItem.getFilteredSounds(stack).ifPresent(soundFilter::addAll);
     }
 
     public final Direction.Axis getRotationAxis(BlockState state) {

@@ -4,10 +4,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipModifier;
-import dev.JustRed23.createsoundmuffling.registry.CSMBlockEntities;
-import dev.JustRed23.createsoundmuffling.registry.CSMBlocks;
-import dev.JustRed23.createsoundmuffling.registry.CSMCreativeTabs;
-import dev.JustRed23.createsoundmuffling.registry.CSMStress;
+import dev.JustRed23.createsoundmuffling.registry.*;
 import net.createmod.catnip.lang.FontHelper;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
@@ -28,9 +25,11 @@ public class CreateSoundMuffling {
     public CreateSoundMuffling(IEventBus modEventBus) {
         REGISTRATE.registerEventListeners(modEventBus);
         CSMCreativeTabs.register(modEventBus);
+        CSMItems.register();
         CSMBlocks.register();
         CSMBlockEntities.register();
         CSMStress.register();
+        CSMMenuTypes.register();
     }
 
     public static CreateRegistrate registrate() {
